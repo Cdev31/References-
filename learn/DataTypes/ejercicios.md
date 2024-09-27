@@ -1,8 +1,7 @@
 
 # 1. calculo de costo por stock
-```
+
 Eres el encargado de un almacén que gestiona diferentes tipos de productos. Cada producto tiene un stock específico y un costo por unidad. Tu tarea es calcular el stock total disponible y el valor total del inventario.
-```
 
 # Descripción de los Productos:
 
@@ -26,9 +25,7 @@ Objetivos:
 
 # 2. salarios de una nomina con horas extras y bonos
 
-```
 Una empresa cuenta con un equipo diverso de trabajadores con diferentes sueldos base y condiciones de pago. Tu tarea es calcular el total de dinero pagado en salarios y bonos en un periodo de tres meses.
-```
 
 # Descripción de los Trabajadores:
 
@@ -58,9 +55,9 @@ Objetivos:
 2. Calcular el total de dinero pagado en bonos y salarios durante tres meses.
 
 # 3. Calculo de consumo y costo de combustible de un vehiculo por hora, kilometro recorrido y tipo de vehiculo.
-```
+
 Se dispone de cuatro tipos de vehículos para realizar un viaje, y cada uno tiene un consumo de combustible diferente. La tarea es determinar cuál vehículo es la opción más eficiente en términos de gasto de combustible para una distancia específica de viaje.
-```
+
 # Descripción de los Vehículos:
 
 Motocicleta: Consume 2.78 litros de combustible por cada 3,757 metros recorridos.
