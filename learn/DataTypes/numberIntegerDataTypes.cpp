@@ -4,7 +4,7 @@
 
 int main(int argc, char const *argv[])
 {
-    typedef int short _my_long; // definicion de tipo
+    typedef int short _my_long; // definicion de tipo o alias
 
     // litle-edian y big-edian
 
