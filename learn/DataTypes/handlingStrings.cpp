@@ -1,95 +1,76 @@
 #include <iostream>
+#include <string>
 
-using namespace std;
+int main() {
+    // 1. Crear una string
+    std::string str1 = "Hola";
+    std::string str2 = "Mundo";
+    std::cout << "Concatenado: " << str1 << " " << str2 << std::endl;
 
-string validacionNombre ( string name ){
+    // 2. Obtener la longitud de una string
+    std::cout << "Longitud de str1: " << str1.size() << std::endl;
+    std::cout << "Longitud de str2: " << str2.length() << std::endl;
+
+    // 3. Concatenar strings
+    std::string str3 = str1 + " " + str2;
+    std::cout << "Concatenado con +: " << str3 << std::endl;
     
-    cout << "Su nombre es: " << name << "de tamaño:"  << name.size() << endl;
+    str1 += " Mundo";
+    std::cout << "Concatenado con +=: " << str1 << std::endl;
 
-    if( name.size() > 10  ){
+    // 4. Acceder a caracteres individuales
+    std::cout << "Primer carácter de str1: " << str1[0] << std::endl;
+    std::cout << "Segundo carácter de str1: " << str1.at(1) << std::endl;
 
-        return "EL nombre no puede ser mayor a 10 caracteres";
-
-    }
-    else if( name.size() < 3 ){
-
-        return "El nombre no puede ser menor a 3 caracteres";
-
-    } else return "EL nombre: " + name + " es valido :D";
-
-}
-
-string limpiarCaracterBasura( string apellido ){
-    string nuevoApellido = "";
-
-    int counter = 0;
-
-    while( apellido.size() > counter ){
-
-        if( apellido[counter] != '!' &&  
-            apellido[counter] != '$' &&  
-            apellido[counter] != '@' 
-        ){
-           
-            //1-( numero de veces a incertar el caracter ) 2-(caracter)
-            nuevoApellido.append(1 , apellido[counter]);
-            //nuevoApellido += apellido[counter]; - otra forma
-
-        }
-
-        counter++;
-
+    // 5. Comparar strings
+    std::string str4 = "Hola";
+    if (str1 == str4) {
+        std::cout << "str1 y str4 son iguales" << std::endl;
+    } else {
+        std::cout << "str1 y str4 son diferentes" << std::endl;
     }
 
-    return nuevoApellido;
+    if (str1.compare(str2) != 0) {
+        std::cout << "str1 y str2 son diferentes" << std::endl;
+    }
 
-}
+    // 6. Subcadenas
+    std::string subStr = str3.substr(5, 5);  // Empieza en el índice 5, extrae 5 caracteres
+    std::cout << "Subcadena de str3: " << subStr << std::endl;
 
-string censurarMalasPalabras( string descripcion, string malaPalabra ){
-
-    string nuevaDescripcion = descripcion;
-     
-    //devuelve la posicion de inicio de la palabra
-    size_t indiceInicioMalapalabra = descripcion.find( malaPalabra );
-    size_t indiceFinalMalapabra = indiceInicioMalapalabra + malaPalabra.length();
-
-    if( indiceInicioMalapalabra != string::npos ){
-    
-        nuevaDescripcion.replace( indiceInicioMalapalabra, indiceFinalMalapabra , "@3$32!" );
+    // 7. Buscar en una string
+    size_t pos = str3.find("Hola");
+    if (pos != std::string::npos) {
+        std::cout << "'Hola' encontrado en: " << pos << std::endl;
     }
     
-    return nuevaDescripcion;
+    pos = str3.rfind("Hola");
+    if (pos != std::string::npos) {
+        std::cout << "'Hola' encontrado por última vez en: " << pos << std::endl;
+    }
 
-}
+    // 8. Reemplazar partes de una string
+    std::string str5 = "Hola Mundo";
+    str5.replace(5, 5, "C++");  // Reemplaza desde el índice 5, 5 caracteres por "C++"
+    std::cout << "Reemplazado: " << str5 << std::endl;
 
-int main (){
-     /* METODOS DE MANIPULACION DE TEXTO */
-     string nombre, apellido, descripcion = "", email;
+    // 9. Insertar una subcadena
+    str5.insert(5, "C++ ");  // Inserta "C++ " en el índice 5
+    std::cout << "Insertado: " << str5 << std::endl;
 
-    //validacion del nombre no debe ser mayor a 10 caracteres y menor de 3
-     cout << "Ingrese su nombre: ";
-     cin >> nombre;
+    // 10. Eliminar caracteres
+    str5.erase(4, 6);  // Elimina desde el índice 4, 6 caracteres
+    std::cout << "Después de eliminar: " << str5 << std::endl;
 
-     string esNombreValido = validacionNombre( nombre );
+    // 11. Convertir a C-string
+    const char* cstr = str5.c_str();
+    std::cout << "C-string: " << cstr << std::endl;
 
-     cout << esNombreValido << endl;
+    // 12. Limpiar la cadena
+    str5.clear();  // Limpia la cadena
+    if (str5.empty()) {
+        std::cout << "La cadena está vacía" << std::endl;
+    }
 
-    //Limpieza de palabras
-    cout << "Ingrese su apellido: ";
-    cin >> apellido;
-
-    string nuevoApellido = limpiarCaracterBasura( apellido );
-
-    cout << "Su apellido es: " << nuevoApellido << endl;
-
-    //censurar malas palabras
-    cout << "Ingrese una descripcion: ";
-    //captura toda la linea
-    getline( cin, descripcion );
-
-    string nuevaDescripcion = censurarMalasPalabras( descripcion, "imbecil" );
-
-    cout << "Su nueva descripcion es: " << nuevaDescripcion << endl;
-
-     return 0;
+    return 0;
 }
