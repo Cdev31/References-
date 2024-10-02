@@ -4,7 +4,7 @@
 ### C++ ###
 # Prerequisites
 *.d
-
+**/main
 # Compiled Object files
 *.slo
 *.lo
