@@ -1,7 +1,9 @@
 #include <iostream>
+#include <limits>
 
 using namespace std;
 
+//Otros temas: etiquetas en bucles, bucles con rango, foreach, punteros con bucle.
 int main(int argc, char const *argv[])
 {
     string password, email;
@@ -72,6 +74,32 @@ int main(int argc, char const *argv[])
         }
     }
 
+    //uso de break y continue
+
+    cout << "Uso de brack y continue \n";
+    char letra2 = 'a';
+
+    while( letra2 != 'x' ){
+        cout << "Ingrese una letra" << endl;
+        cin >> letra2;
+        if( letra2 == 'z' ){
+            break;
+        }
+        else if( typeid(letra2) == typeid(int) ){
+            cin.clear();
+            cin.ignore(numeric_limits<streamsize>::max(), '\n'); 
+            continue;
+        }
+    }
+    
+    //do while y decrementos
+    cout << "Uso de do while \n";
+
+    int i = 10;
+    do {
+        cout << "Valor de i: " << i << endl;
+        i--;
+    } while (i > 0);
 
     return 0;
 }
