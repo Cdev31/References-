@@ -52,8 +52,6 @@ int main(int argc, char const *argv[])
 
     //for como bucle mas complejo
 
-    //borramos sus valores
-
     for( bool validData = false; validData == false;  ){
         string password, email;
 
