@@ -26,9 +26,5 @@ int main(int argc, char const *argv[])
     {
         cerr << e.what() << '\n';
     }
-
-   
-    
-
     return 0;
 }
