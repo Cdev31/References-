@@ -42,6 +42,9 @@ class Book{
     // de la clase padre puedan acceder a las variables o metodos de este tipo.
 
     protected: int referenciaInterna; 
+
+    // CONSTRUCTOR
+    
 };
 
 
